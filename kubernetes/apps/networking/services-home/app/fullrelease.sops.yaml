@@ -1,0 +1,190 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: home-service
+    namespace: networking
+spec:
+    ports:
+        - name: web
+          protocol: TCP
+          port: ENC[AES256_GCM,data:PLS6ZQ==,iv:kN6R5fJV5WQciNFfjst+Yf8wYQYVoVxiXB/7qgqKi2k=,tag:VHUG77XmN20+Euql7iUfLQ==,type:int]
+          targetPort: ENC[AES256_GCM,data:wn8rHQ==,iv:/QLXSFyezxE1Uq7AN0bpvgVTzG4uyWm+MxP39FRG8tg=,tag:PvkhaHrU+PVBlPdshl8N6g==,type:int]
+    type: ExternalName
+    sessionAffinity: None
+    externalName: ENC[AES256_GCM,data:byL3ovb2QBPruKU=,iv:Y/XtHu7aGlgUsND/clZMVrodTmmiN5JXwR2ww9YqG+4=,tag:c+ENv+SxjcbWtVfC/gT9Gg==,type:str]
+    internalTrafficPolicy: Cluster
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age17nr093c37k5732q9ksxf2p785wd9fxjej7axzcn66lm6muys0eks9kmzts
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAra1RpVWlqaFZHZHNXWGFY
+            QmpKMUNncUFzWVF6K0FNMHdkR2h4M1g2U0JnClh2aTNzcEs2M2NoMWhMNUVLMGxi
+            SG9aSUhnSDhIbEd1cU1Nb09nOTl4L0kKLS0tIDVVVHhxU1IrYjlYeDZ1cGlsVm5z
+            QXZERGlHNDcvYkRNUG8zby94VmFZY0kKgaWRksO1WPxEzTGPamr+I9qqnF3Y4a+Y
+            34VS41Vpi4at08jcbH+HN6GvhEhN1qZYkjT7XIwdXHqWS7/t0PdH4w==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-08-31T22:37:29Z"
+    mac: ENC[AES256_GCM,data:X1nV2mufYDbwfhyrvCaGfilCBld9JxfuVmiFIDFVNl6Kvu0mpxXTAzTudk1v3G1puWQM1YYQotIeSLVH/vgHZP1lymhVoFKZEDoCT4Qy9ZR5lVkRaeGfx9SB2RWAJ5HdbQuTwW3DXQsrKKHm4+ehjwaY4EE/E61YVzzXOOA3DD4=,iv:3mBqOL0DQwV82HjrVxiJRdVMnX3lZZAb7fxsENcSQmc=,tag:cfz2hqEErUNJEskQ/KxWrQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData|externalName|tls|rules|value|key|port|targetPort)$
+    version: 3.7.3
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: gitlab-service
+    namespace: networking
+spec:
+    ports:
+        - protocol: TCP
+          name: web
+          port: ENC[AES256_GCM,data:F2aJJQ==,iv:0dEAlbswuv94ULjMwuwRJEarLlklzHJaf8/060Xey/s=,tag:HFwyv/yg+NTZshtXaTXS4g==,type:int]
+          targetPort: ENC[AES256_GCM,data:GAP/Mw==,iv:zF38trvdw2J3dpqIOSC+a9FmIKOBEV+TuqaiwYm35c0=,tag:beQy4cJZGQYpHERlr+XdNQ==,type:int]
+        - protocol: TCP
+          name: registry
+          port: ENC[AES256_GCM,data:reB27g==,iv:lWfutL/+orIWfHORtBDE+JY/8y6TMt/3YmuW6sIZjnc=,tag:eD4TKlxBWU1SF0iqwNCUrA==,type:int]
+          targetPort: ENC[AES256_GCM,data:SzumIw==,iv:OrKCTTL8pmYtBl3aPdfxMHZMkdZOKyFmHoXR3jfAh1Y=,tag:xPy4D5TOVgnPa4mTHrEH1Q==,type:int]
+        - protocol: TCP
+          name: ssh
+          port: ENC[AES256_GCM,data:uq9gdw==,iv:a2BiTfWr2jsMRag7roLns/kflijRv7hPgUWkiPvShps=,tag:4zM3vnLodq2IfWrQ9RG3tg==,type:int]
+          targetPort: ENC[AES256_GCM,data:VoqPUA==,iv:6Fww1VWyhpZYwdKAm1YoK/GsOrLI/pj/7/1UCGMwWXY=,tag:AgqEGc61pKHZD7qd7UOd4g==,type:int]
+    type: ExternalName
+    sessionAffinity: None
+    externalName: ENC[AES256_GCM,data:hEp4v5gGvyRGQPu4WA==,iv:eqC+Z0Gd9yJf7RSwl4MClQnxMNP16UTIfeRkUx/eCAk=,tag:yDUbAkO9lDBYvm8gU1NIiQ==,type:str]
+    internalTrafficPolicy: Cluster
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age17nr093c37k5732q9ksxf2p785wd9fxjej7axzcn66lm6muys0eks9kmzts
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAra1RpVWlqaFZHZHNXWGFY
+            QmpKMUNncUFzWVF6K0FNMHdkR2h4M1g2U0JnClh2aTNzcEs2M2NoMWhMNUVLMGxi
+            SG9aSUhnSDhIbEd1cU1Nb09nOTl4L0kKLS0tIDVVVHhxU1IrYjlYeDZ1cGlsVm5z
+            QXZERGlHNDcvYkRNUG8zby94VmFZY0kKgaWRksO1WPxEzTGPamr+I9qqnF3Y4a+Y
+            34VS41Vpi4at08jcbH+HN6GvhEhN1qZYkjT7XIwdXHqWS7/t0PdH4w==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-08-31T22:37:29Z"
+    mac: ENC[AES256_GCM,data:X1nV2mufYDbwfhyrvCaGfilCBld9JxfuVmiFIDFVNl6Kvu0mpxXTAzTudk1v3G1puWQM1YYQotIeSLVH/vgHZP1lymhVoFKZEDoCT4Qy9ZR5lVkRaeGfx9SB2RWAJ5HdbQuTwW3DXQsrKKHm4+ehjwaY4EE/E61YVzzXOOA3DD4=,iv:3mBqOL0DQwV82HjrVxiJRdVMnX3lZZAb7fxsENcSQmc=,tag:cfz2hqEErUNJEskQ/KxWrQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData|externalName|tls|rules|value|key|port|targetPort)$
+    version: 3.7.3
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: gitlab-ingress
+    namespace: networking
+    annotations:
+        ingress.kubernetes.io/proxy-body-size: "0"
+        ingress.kubernetes.io/ssl-redirect: "true"
+        kubernetes.io/tls-acme: "true"
+    labels:
+        use-http01-solver: "true"
+spec:
+    ingressClassName: external
+    tls:
+        - hosts:
+            - ENC[AES256_GCM,data:yrSqqwkPOXR01E4KJqsKNX4=,iv:KUDWeyGOow14MTF9r4a3KTk+VeoqVOkeYUvcR11ZB6I=,tag:hsDUrlTwpmJ9+FIxEpoVBA==,type:str]
+          secretName: ENC[AES256_GCM,data:uIlF7wMHctK/Fh4gMI/8PrEG2kHbzg==,iv:SzpoKRZOE/p/jJmn9v21AOeHMa3otLtoEs6ezgfn9U8=,tag:tAz0LgZq0ya8AbuzjGXtLg==,type:str]
+        - hosts:
+            - ENC[AES256_GCM,data:lqBt1gItFmsfmXn/wjaVaYUq9A==,iv:YV96GZbOb5qgIpkyhFNVhxQSOnZvP2CcEXmLdL/EdLw=,tag:7f4ybXbE+aNjLDBj4ZnGhw==,type:str]
+          secretName: ENC[AES256_GCM,data:Ay8Brs+1IDamxS3Z21xEvNyjokzZVpWBClik9pdskQ==,iv:/7sRfRCuEISX2VtJpyuyBpyrbtq2fzWhARgBwNkl6G8=,tag:3YV/0cbTmEYxo2sEDIAmgA==,type:str]
+    rules:
+        - host: ENC[AES256_GCM,data:NV4nWQXK/pOEmBab5RuODGo=,iv:QzD3hBCeDRJVk2P8SUjvTIY3jQ6zoVE3asBdhH9oSOU=,tag:VmqnlZGZIWwaiwrhnl97oA==,type:str]
+          http:
+            paths:
+                - path: ENC[AES256_GCM,data:NA==,iv:58fjbgMxePjf8tHWLwVZs/cfu/MTgOKQSzEDaZUPnHQ=,tag:hiRdkES5x5QgvwRp4n28gw==,type:str]
+                  pathType: ENC[AES256_GCM,data:ZhuqA9uP,iv:n/bzZG73epagbFKHZDT5MTpcWuel4rxGwRuMjSU3zEQ=,tag:uyXiflW3mzNAqBlVyDc1wQ==,type:str]
+                  backend:
+                    service:
+                        name: ENC[AES256_GCM,data:rBRwWOUEiHK3Wuf3U6g=,iv:k9gHOQK7z5ZyFMi7LAEOwiMafjSc3R4FoxC6UaDQmek=,tag:mz4DO2EzSZoEwnmq9tF4UQ==,type:str]
+                        port:
+                            number: ENC[AES256_GCM,data:0k7b9A==,iv:wQGkgD2/C2IRhJ0AWM7n8UC+t8JxQCCh4hMMk6Laxcs=,tag:wdSZJhQO+R+MIxKAg2Wwcg==,type:int]
+        - host: ENC[AES256_GCM,data:+gNGfWY5C7JlqyXSwcaLoQo+yw==,iv:Ev/K/6LknDBtpkgkuhzU4SR+c5PqPFxnlRndcXcZHeg=,tag:QM3c9S/vVdHffU1Qyak0SQ==,type:str]
+          http:
+            paths:
+                - path: ENC[AES256_GCM,data:YA==,iv:Rq/2kTcPWlglDOguHBgtAkCV2VtdA+wCyMRmCAE64FI=,tag:IgQwQf7aXOzAiAcPtqYULw==,type:str]
+                  pathType: ENC[AES256_GCM,data:gId3FRd1,iv:Y4pv1B8BOrxwd8FBLFM+VZ6r4spe9NwuD8wMCwv1I0M=,tag:RiEgmGcQSCYU/E5G4H7GIQ==,type:str]
+                  backend:
+                    service:
+                        name: ENC[AES256_GCM,data:2usgMEVaVWrVN0C9st0=,iv:R4t8gYvd2OXYPoMcKIgyc9WF+px9wpOgjnHUfa11pXg=,tag:wR55XcIAA55ZSOOCb9UR3A==,type:str]
+                        port:
+                            number: ENC[AES256_GCM,data:KRQIWA==,iv:/PKFql/YG7VoEgUEt2+i/kxuI8dbbvBJhjVJgootW6g=,tag:NLx826r9q18IKICll7Wftg==,type:int]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age17nr093c37k5732q9ksxf2p785wd9fxjej7axzcn66lm6muys0eks9kmzts
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAra1RpVWlqaFZHZHNXWGFY
+            QmpKMUNncUFzWVF6K0FNMHdkR2h4M1g2U0JnClh2aTNzcEs2M2NoMWhMNUVLMGxi
+            SG9aSUhnSDhIbEd1cU1Nb09nOTl4L0kKLS0tIDVVVHhxU1IrYjlYeDZ1cGlsVm5z
+            QXZERGlHNDcvYkRNUG8zby94VmFZY0kKgaWRksO1WPxEzTGPamr+I9qqnF3Y4a+Y
+            34VS41Vpi4at08jcbH+HN6GvhEhN1qZYkjT7XIwdXHqWS7/t0PdH4w==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-08-31T22:37:29Z"
+    mac: ENC[AES256_GCM,data:X1nV2mufYDbwfhyrvCaGfilCBld9JxfuVmiFIDFVNl6Kvu0mpxXTAzTudk1v3G1puWQM1YYQotIeSLVH/vgHZP1lymhVoFKZEDoCT4Qy9ZR5lVkRaeGfx9SB2RWAJ5HdbQuTwW3DXQsrKKHm4+ehjwaY4EE/E61YVzzXOOA3DD4=,iv:3mBqOL0DQwV82HjrVxiJRdVMnX3lZZAb7fxsENcSQmc=,tag:cfz2hqEErUNJEskQ/KxWrQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData|externalName|tls|rules|value|key|port|targetPort)$
+    version: 3.7.3
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: home-ingress
+    namespace: networking
+    annotations:
+        ingress.kubernetes.io/proxy-body-size: "0"
+        ingress.kubernetes.io/ssl-redirect: "true"
+        kubernetes.io/tls-acme: "true"
+    labels:
+        use-http01-solver: "true"
+spec:
+    ingressClassName: external
+    tls:
+        - hosts:
+            - ENC[AES256_GCM,data:qZt/EBJ9fXi2jxsI+zEA,iv:bErKgxMAmXJLNfDDcjRgLB8zj0MnohMRFpcUaTV8H6o=,tag:8E8Sw6nJkz1W6h09RQW/qQ==,type:str]
+          secretName: ENC[AES256_GCM,data:djL5SqNesAS39xcLI60wuR50H4g=,iv:DejvOUJsYRMwVTne49u90y3OQmtOM25BdKWi5QXVX3M=,tag:uU6V/5uZID3raBBhOx46EQ==,type:str]
+    rules:
+        - host: ENC[AES256_GCM,data:DhOW8sUAp4eAVvV/a801,iv:RQur5q5CAJ18Fm7DemsAphJynawnW/AwrHrc/OervmE=,tag:zFBf8tBkDQjBhZA6CL59oA==,type:str]
+          http:
+            paths:
+                - path: ENC[AES256_GCM,data:lQ==,iv:irKLKa6i3lNQJXcxlMGPxdKB0+UoVwonly2s1nX38aw=,tag:sGBQl7SPHth8J2VljGmZKw==,type:str]
+                  pathType: ENC[AES256_GCM,data:M47yLSqehvHZl91Rs/nxv3wmI8rDEw==,iv:pvOjxcBO+ICbc5hhP3gDO0cbkszNT86o6lBAIMdkoOQ=,tag:ZTAjzsp3TUXbq8T1tfRZKw==,type:str]
+                  backend:
+                    service:
+                        name: ENC[AES256_GCM,data:Sz38550msn4xVqsA,iv:ayCiH+Eg8flUCjLfETIa39oFfKcOhKZjN9BZ9Xx0dLo=,tag:LzvqS7+EIy8RZlJG2G7NAQ==,type:str]
+                        port:
+                            number: ENC[AES256_GCM,data:xwpisA==,iv:WX93AdpKxbyVwQuh9XMtrPqiUDJzZRPjZOcmCKEf7xQ=,tag:ilnglFFXTWrBCkydJZHUiw==,type:int]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age17nr093c37k5732q9ksxf2p785wd9fxjej7axzcn66lm6muys0eks9kmzts
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAra1RpVWlqaFZHZHNXWGFY
+            QmpKMUNncUFzWVF6K0FNMHdkR2h4M1g2U0JnClh2aTNzcEs2M2NoMWhMNUVLMGxi
+            SG9aSUhnSDhIbEd1cU1Nb09nOTl4L0kKLS0tIDVVVHhxU1IrYjlYeDZ1cGlsVm5z
+            QXZERGlHNDcvYkRNUG8zby94VmFZY0kKgaWRksO1WPxEzTGPamr+I9qqnF3Y4a+Y
+            34VS41Vpi4at08jcbH+HN6GvhEhN1qZYkjT7XIwdXHqWS7/t0PdH4w==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-08-31T22:37:29Z"
+    mac: ENC[AES256_GCM,data:X1nV2mufYDbwfhyrvCaGfilCBld9JxfuVmiFIDFVNl6Kvu0mpxXTAzTudk1v3G1puWQM1YYQotIeSLVH/vgHZP1lymhVoFKZEDoCT4Qy9ZR5lVkRaeGfx9SB2RWAJ5HdbQuTwW3DXQsrKKHm4+ehjwaY4EE/E61YVzzXOOA3DD4=,iv:3mBqOL0DQwV82HjrVxiJRdVMnX3lZZAb7fxsENcSQmc=,tag:cfz2hqEErUNJEskQ/KxWrQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData|externalName|tls|rules|value|key|port|targetPort)$
+    version: 3.7.3
