@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-settings
+  namespace: flux-system
+data:
+  TIMEZONE: "Europe/Sofia"
+  COREDNS_ADDR: "10.43.0.10"
+  KUBE_VIP_ADDR: "10.4.0.10"
+  CLUSTER_CIDR: "10.42.0.0/16"
+  SERVICE_CIDR: "10.43.0.0/16"
+  NODE_CIDR: "10.4.0.0/24"
+  CURRENT_EXTERNAL_IP: "${CURRENT_EXTERNAL_IP}"

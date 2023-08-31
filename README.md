@@ -5,9 +5,6 @@ Welcome to my highly opinionated template for deploying a single Kubernetes ([k3
 ## 👋 Introduction
 
 The goal of this project is to make it easy for people interested in learning Kubernetes to deploy a basic cluster at home and become familiar with the GitOps tool Flux.
-
-This template implements Flux in a way that promotes legibility and ease of use for those who are new (or relatively new) to the technology and GitOps in general. It assumes a typical homelab setup: namely, a single "home prod" cluster running mostly third-party apps.
-
 ## ✨ Features
 
 - Automated, reproducible, customizable setup through Ansible templates and playbooks
@@ -19,8 +16,6 @@ This template implements Flux in a way that promotes legibility and ease of use 
 - Next-gen networking thanks to [Cilium](https://cilium.io/)
 - A [Renovate](https://www.mend.io/renovate)-ready repository
 - Integrated [GitHub Actions](https://github.com/features/actions)
-
-... and more!
 
 ## 📝 Pre-start checklist
 

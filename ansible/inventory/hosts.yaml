@@ -1,0 +1,28 @@
+---
+kubernetes:
+  children:
+    master:
+      hosts:
+        k3s-pve-controller-0:
+          ansible_user: ubuntu
+          ansible_host: 10.4.0.40
+        k3s-pve-controller-1:
+          ansible_user: ubuntu
+          ansible_host: 10.4.0.41
+        k3s-pve-controller-2:
+          ansible_user: ubuntu
+          ansible_host: 10.4.0.42
+    worker:
+      hosts:
+        k3s-pve-worker-0:
+          ansible_user: ubuntu
+          ansible_host: 10.4.0.30
+        k3s-pve-worker-1:
+          ansible_user: ubuntu
+          ansible_host: 10.4.0.31
+        k3s-pve-worker-2:
+          ansible_user: ubuntu
+          ansible_host: 10.4.0.32
+        k3s-pve-worker-3:
+          ansible_user: ubuntu
+          ansible_host: 10.4.0.33
