@@ -1,17 +1,17 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: home-service
+    name: test-service
     namespace: networking
 spec:
     ports:
         - name: web
           protocol: TCP
-          port: ENC[AES256_GCM,data:PLS6ZQ==,iv:kN6R5fJV5WQciNFfjst+Yf8wYQYVoVxiXB/7qgqKi2k=,tag:VHUG77XmN20+Euql7iUfLQ==,type:int]
-          targetPort: ENC[AES256_GCM,data:wn8rHQ==,iv:/QLXSFyezxE1Uq7AN0bpvgVTzG4uyWm+MxP39FRG8tg=,tag:PvkhaHrU+PVBlPdshl8N6g==,type:int]
+          port: ENC[AES256_GCM,data:kF4X2A==,iv:MJ0qlJ63x/6cq8cTLWAYQ9l96euBRzKFWMa+NgGTEME=,tag:PAK3I6lr6rnINcrJJg27yw==,type:int]
+          targetPort: ENC[AES256_GCM,data:8cSf4A==,iv:d9lntnFgIk75AcaI+m8J62U6kKEOsPpSLVqr7v6fWOM=,tag:sjmsChqUe+g5V4000xfZig==,type:int]
     type: ExternalName
     sessionAffinity: None
-    externalName: ENC[AES256_GCM,data:byL3ovb2QBPruKU=,iv:Y/XtHu7aGlgUsND/clZMVrodTmmiN5JXwR2ww9YqG+4=,tag:c+ENv+SxjcbWtVfC/gT9Gg==,type:str]
+    externalName: ENC[AES256_GCM,data:jD7KEmmRqxVyFYM=,iv:BaQ8tiWmwcZp/TV13ywl3xZoADIi/SZXXOW87oAYmsM=,tag:GaW22SK6wB48vaf6W2FZqA==,type:str]
     internalTrafficPolicy: Cluster
 sops:
     kms: []
@@ -22,14 +22,50 @@ sops:
         - recipient: age17nr093c37k5732q9ksxf2p785wd9fxjej7axzcn66lm6muys0eks9kmzts
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAra1RpVWlqaFZHZHNXWGFY
-            QmpKMUNncUFzWVF6K0FNMHdkR2h4M1g2U0JnClh2aTNzcEs2M2NoMWhMNUVLMGxi
-            SG9aSUhnSDhIbEd1cU1Nb09nOTl4L0kKLS0tIDVVVHhxU1IrYjlYeDZ1cGlsVm5z
-            QXZERGlHNDcvYkRNUG8zby94VmFZY0kKgaWRksO1WPxEzTGPamr+I9qqnF3Y4a+Y
-            34VS41Vpi4at08jcbH+HN6GvhEhN1qZYkjT7XIwdXHqWS7/t0PdH4w==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBVmsyakFVbUx0RnloOU1K
+            T2xBZ0dCVUxoMzEvblYraDFmQzgwVG1wVVVZCi9zSVhQL0tIV2xzNTg2YkQwdzZV
+            WHc4MmRWem1vcnAzU3lKRVBKeHJjV28KLS0tIFhpcXlJdCt5MWQyNE1OaEVtQU81
+            WHZDYnFkSTdweW5WMUF0WENnZXk5Rk0KlAzXMQAJ6N0T+KqTFTHRIS2GJguA1nXE
+            q2xOSDwhOoWcXNzhwyRRTyYopQ9CepVT5NxQwrcJbSUtk+qHFReOJg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-08-31T22:37:29Z"
-    mac: ENC[AES256_GCM,data:X1nV2mufYDbwfhyrvCaGfilCBld9JxfuVmiFIDFVNl6Kvu0mpxXTAzTudk1v3G1puWQM1YYQotIeSLVH/vgHZP1lymhVoFKZEDoCT4Qy9ZR5lVkRaeGfx9SB2RWAJ5HdbQuTwW3DXQsrKKHm4+ehjwaY4EE/E61YVzzXOOA3DD4=,iv:3mBqOL0DQwV82HjrVxiJRdVMnX3lZZAb7fxsENcSQmc=,tag:cfz2hqEErUNJEskQ/KxWrQ==,type:str]
+    lastmodified: "2023-09-01T18:19:37Z"
+    mac: ENC[AES256_GCM,data:KvajVI3yWJXv9JwmvPw7wF4H+SfGt15IL5vN3Z1AL6qYf/+nxaccd24I7Tb7vVue1KO3mo8QjFxZ7W445+f4ced9ykqhImWgvh+xYtXuS1dspw12YOuWZ/S/wwJijkd6WcMxe0506kfRefqqAUMaYgHFhd5LGXqR1avvLQMDHQU=,iv:CLp4iOXCV+dZxtLYZHas4m74LqOq1tZlU9Hfm1L6TfE=,tag:d6XBpgTusfXB2CvVNZaZQw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData|externalName|tls|rules|value|key|port|targetPort)$
+    version: 3.7.3
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: home-service
+    namespace: networking
+spec:
+    ports:
+        - name: web
+          protocol: TCP
+          port: ENC[AES256_GCM,data:BIIS/g==,iv:+YvUGxeX4DHr5xE65zI6ujg33W5lxSxO2bjwEWGXRZQ=,tag:ppy7UoT0IJOuQAynMWI3BA==,type:int]
+          targetPort: ENC[AES256_GCM,data:DdaK5w==,iv:LuBLhBiXdMXTu2G4jCaxM+o2BfsPwIIurfG8fRPZ6qw=,tag:Sg7WZtgDtUIEqMsK2UX7lQ==,type:int]
+    type: ExternalName
+    sessionAffinity: None
+    externalName: ENC[AES256_GCM,data:60hmteJFulYEdro=,iv:oBweSj9JGvSsk7Q5UiN7QkTjPqrwWcai9CZLweAXATM=,tag:aCsbyXgN2yyI8wSqQsni8Q==,type:str]
+    internalTrafficPolicy: Cluster
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age17nr093c37k5732q9ksxf2p785wd9fxjej7axzcn66lm6muys0eks9kmzts
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBVmsyakFVbUx0RnloOU1K
+            T2xBZ0dCVUxoMzEvblYraDFmQzgwVG1wVVVZCi9zSVhQL0tIV2xzNTg2YkQwdzZV
+            WHc4MmRWem1vcnAzU3lKRVBKeHJjV28KLS0tIFhpcXlJdCt5MWQyNE1OaEVtQU81
+            WHZDYnFkSTdweW5WMUF0WENnZXk5Rk0KlAzXMQAJ6N0T+KqTFTHRIS2GJguA1nXE
+            q2xOSDwhOoWcXNzhwyRRTyYopQ9CepVT5NxQwrcJbSUtk+qHFReOJg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-09-01T18:19:37Z"
+    mac: ENC[AES256_GCM,data:KvajVI3yWJXv9JwmvPw7wF4H+SfGt15IL5vN3Z1AL6qYf/+nxaccd24I7Tb7vVue1KO3mo8QjFxZ7W445+f4ced9ykqhImWgvh+xYtXuS1dspw12YOuWZ/S/wwJijkd6WcMxe0506kfRefqqAUMaYgHFhd5LGXqR1avvLQMDHQU=,iv:CLp4iOXCV+dZxtLYZHas4m74LqOq1tZlU9Hfm1L6TfE=,tag:d6XBpgTusfXB2CvVNZaZQw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData|externalName|tls|rules|value|key|port|targetPort)$
     version: 3.7.3
@@ -43,19 +79,19 @@ spec:
     ports:
         - protocol: TCP
           name: web
-          port: ENC[AES256_GCM,data:F2aJJQ==,iv:0dEAlbswuv94ULjMwuwRJEarLlklzHJaf8/060Xey/s=,tag:HFwyv/yg+NTZshtXaTXS4g==,type:int]
-          targetPort: ENC[AES256_GCM,data:GAP/Mw==,iv:zF38trvdw2J3dpqIOSC+a9FmIKOBEV+TuqaiwYm35c0=,tag:beQy4cJZGQYpHERlr+XdNQ==,type:int]
+          port: ENC[AES256_GCM,data:2q1uog==,iv:BMzWjubOiV81mW66RbynnpdUm/BJXlG1UH0emGtuLvA=,tag:KobzU8Kcxn91iqh5lyVl1g==,type:int]
+          targetPort: ENC[AES256_GCM,data:orRnGw==,iv:fG8DGUoIZAPrnCc5FcHtzVfwLlnFleMx0VcApvGk9vQ=,tag:yEAknoIXF0bUz+EafkG6cQ==,type:int]
         - protocol: TCP
           name: registry
-          port: ENC[AES256_GCM,data:reB27g==,iv:lWfutL/+orIWfHORtBDE+JY/8y6TMt/3YmuW6sIZjnc=,tag:eD4TKlxBWU1SF0iqwNCUrA==,type:int]
-          targetPort: ENC[AES256_GCM,data:SzumIw==,iv:OrKCTTL8pmYtBl3aPdfxMHZMkdZOKyFmHoXR3jfAh1Y=,tag:xPy4D5TOVgnPa4mTHrEH1Q==,type:int]
+          port: ENC[AES256_GCM,data:G2KTUw==,iv:UX+GJ4oSx5tRyxxB0Be+t7AESD57t6Bbpb7j7XKSZoI=,tag:yJ4JWUv+sLY/rNyg1Rzoig==,type:int]
+          targetPort: ENC[AES256_GCM,data:fndzcQ==,iv:Fs2QT6KC6iYnyO/l/avh9MNmhmwxvZiMwCXEohZXH7U=,tag:tJTYl6Uy4ivHfFxlrq8B5w==,type:int]
         - protocol: TCP
           name: ssh
-          port: ENC[AES256_GCM,data:uq9gdw==,iv:a2BiTfWr2jsMRag7roLns/kflijRv7hPgUWkiPvShps=,tag:4zM3vnLodq2IfWrQ9RG3tg==,type:int]
-          targetPort: ENC[AES256_GCM,data:VoqPUA==,iv:6Fww1VWyhpZYwdKAm1YoK/GsOrLI/pj/7/1UCGMwWXY=,tag:AgqEGc61pKHZD7qd7UOd4g==,type:int]
+          port: ENC[AES256_GCM,data:MftATw==,iv:62k9IFV6ir7gnWcAHowcZMPQsplh8gcQcpfeEUeae4Y=,tag:cNEWRZMylvfKrRJD0zn1HA==,type:int]
+          targetPort: ENC[AES256_GCM,data:wKTfgw==,iv:+bXDULwqvz4jc0vhhANPL41GNJXxpaYZZEF3in6jmjY=,tag:mc3quzxMamFQtpEq8VC4LQ==,type:int]
     type: ExternalName
     sessionAffinity: None
-    externalName: ENC[AES256_GCM,data:hEp4v5gGvyRGQPu4WA==,iv:eqC+Z0Gd9yJf7RSwl4MClQnxMNP16UTIfeRkUx/eCAk=,tag:yDUbAkO9lDBYvm8gU1NIiQ==,type:str]
+    externalName: ENC[AES256_GCM,data:BKV0uuerZeJ49RyEhA==,iv:wldgciSsn23R5UolTObGh3BBgHmq/IPRf5z/R+b+h7Q=,tag:k06CS/cd+DjjIMDUi3ml1A==,type:str]
     internalTrafficPolicy: Cluster
 sops:
     kms: []
@@ -66,14 +102,14 @@ sops:
         - recipient: age17nr093c37k5732q9ksxf2p785wd9fxjej7axzcn66lm6muys0eks9kmzts
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAra1RpVWlqaFZHZHNXWGFY
-            QmpKMUNncUFzWVF6K0FNMHdkR2h4M1g2U0JnClh2aTNzcEs2M2NoMWhMNUVLMGxi
-            SG9aSUhnSDhIbEd1cU1Nb09nOTl4L0kKLS0tIDVVVHhxU1IrYjlYeDZ1cGlsVm5z
-            QXZERGlHNDcvYkRNUG8zby94VmFZY0kKgaWRksO1WPxEzTGPamr+I9qqnF3Y4a+Y
-            34VS41Vpi4at08jcbH+HN6GvhEhN1qZYkjT7XIwdXHqWS7/t0PdH4w==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBVmsyakFVbUx0RnloOU1K
+            T2xBZ0dCVUxoMzEvblYraDFmQzgwVG1wVVVZCi9zSVhQL0tIV2xzNTg2YkQwdzZV
+            WHc4MmRWem1vcnAzU3lKRVBKeHJjV28KLS0tIFhpcXlJdCt5MWQyNE1OaEVtQU81
+            WHZDYnFkSTdweW5WMUF0WENnZXk5Rk0KlAzXMQAJ6N0T+KqTFTHRIS2GJguA1nXE
+            q2xOSDwhOoWcXNzhwyRRTyYopQ9CepVT5NxQwrcJbSUtk+qHFReOJg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-08-31T22:37:29Z"
-    mac: ENC[AES256_GCM,data:X1nV2mufYDbwfhyrvCaGfilCBld9JxfuVmiFIDFVNl6Kvu0mpxXTAzTudk1v3G1puWQM1YYQotIeSLVH/vgHZP1lymhVoFKZEDoCT4Qy9ZR5lVkRaeGfx9SB2RWAJ5HdbQuTwW3DXQsrKKHm4+ehjwaY4EE/E61YVzzXOOA3DD4=,iv:3mBqOL0DQwV82HjrVxiJRdVMnX3lZZAb7fxsENcSQmc=,tag:cfz2hqEErUNJEskQ/KxWrQ==,type:str]
+    lastmodified: "2023-09-01T18:19:37Z"
+    mac: ENC[AES256_GCM,data:KvajVI3yWJXv9JwmvPw7wF4H+SfGt15IL5vN3Z1AL6qYf/+nxaccd24I7Tb7vVue1KO3mo8QjFxZ7W445+f4ced9ykqhImWgvh+xYtXuS1dspw12YOuWZ/S/wwJijkd6WcMxe0506kfRefqqAUMaYgHFhd5LGXqR1avvLQMDHQU=,iv:CLp4iOXCV+dZxtLYZHas4m74LqOq1tZlU9Hfm1L6TfE=,tag:d6XBpgTusfXB2CvVNZaZQw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData|externalName|tls|rules|value|key|port|targetPort)$
     version: 3.7.3
@@ -84,41 +120,54 @@ metadata:
     name: gitlab-ingress
     namespace: networking
     annotations:
+        external-dns.alpha.kubernetes.io/target: ingress.dxas90.xyz
         ingress.kubernetes.io/proxy-body-size: "0"
         ingress.kubernetes.io/ssl-redirect: "true"
         kubernetes.io/tls-acme: "true"
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.tls: "true"
     labels:
         use-http01-solver: "true"
 spec:
-    ingressClassName: external
+    ingressClassName: traefik
     tls:
         - hosts:
-            - ENC[AES256_GCM,data:yrSqqwkPOXR01E4KJqsKNX4=,iv:KUDWeyGOow14MTF9r4a3KTk+VeoqVOkeYUvcR11ZB6I=,tag:hsDUrlTwpmJ9+FIxEpoVBA==,type:str]
-          secretName: ENC[AES256_GCM,data:uIlF7wMHctK/Fh4gMI/8PrEG2kHbzg==,iv:SzpoKRZOE/p/jJmn9v21AOeHMa3otLtoEs6ezgfn9U8=,tag:tAz0LgZq0ya8AbuzjGXtLg==,type:str]
+            - ENC[AES256_GCM,data:meLSf+uLbHFkyU5dF2uZhPQ=,iv:HzYzwajO7TPmuVtyQ1xxCC0qkXoKRQFdyTg8G5pQWfY=,tag:aMgaHuv7smm3S5FGO9tosw==,type:str]
+          secretName: ENC[AES256_GCM,data:o2EjpfWgZ/eUGkqBXguBEhHpwn/2nw==,iv:VCKem9mhhS2UT6CoWFaY/TxF/sfQN7XcYFxdL0fZ0Pg=,tag:5CU38goU18/8JLOyPGRbLg==,type:str]
         - hosts:
-            - ENC[AES256_GCM,data:lqBt1gItFmsfmXn/wjaVaYUq9A==,iv:YV96GZbOb5qgIpkyhFNVhxQSOnZvP2CcEXmLdL/EdLw=,tag:7f4ybXbE+aNjLDBj4ZnGhw==,type:str]
-          secretName: ENC[AES256_GCM,data:Ay8Brs+1IDamxS3Z21xEvNyjokzZVpWBClik9pdskQ==,iv:/7sRfRCuEISX2VtJpyuyBpyrbtq2fzWhARgBwNkl6G8=,tag:3YV/0cbTmEYxo2sEDIAmgA==,type:str]
+            - ENC[AES256_GCM,data:Tyjtw3I1mIZDiEclwK0DKHrM1w==,iv:F9zq0yx4+M/Zb256xVrPbJP2qCqKoj+hkRq0bryoRws=,tag:UkRQZgfFZ6xI0k7Ijiw7Dg==,type:str]
+          secretName: ENC[AES256_GCM,data:CwLH2CLcDb/2bm/Y9KgHfEZcuds0/ctmdsqFeC8xhg==,iv:jtyt2uCpCkVf10xwUlMjt9NYTw7/pMja8MT3YoYdfKw=,tag:NeLB7+1NeStonRAHDusDiA==,type:str]
     rules:
-        - host: ENC[AES256_GCM,data:NV4nWQXK/pOEmBab5RuODGo=,iv:QzD3hBCeDRJVk2P8SUjvTIY3jQ6zoVE3asBdhH9oSOU=,tag:VmqnlZGZIWwaiwrhnl97oA==,type:str]
+        - host: ENC[AES256_GCM,data:M1RzVO20+ss8UbQ1rD6Ga2g=,iv:HVAuEO051KsO736ca+tjYq7xTvPf5ueTG3ECxPOuSxY=,tag:1n3WnXB5n5nmBORH9NvTxA==,type:str]
           http:
             paths:
-                - path: ENC[AES256_GCM,data:NA==,iv:58fjbgMxePjf8tHWLwVZs/cfu/MTgOKQSzEDaZUPnHQ=,tag:hiRdkES5x5QgvwRp4n28gw==,type:str]
-                  pathType: ENC[AES256_GCM,data:ZhuqA9uP,iv:n/bzZG73epagbFKHZDT5MTpcWuel4rxGwRuMjSU3zEQ=,tag:uyXiflW3mzNAqBlVyDc1wQ==,type:str]
+                - path: ENC[AES256_GCM,data:Gg==,iv:xY4k+RkufGL7MQfomCpUTwjzM9kkmazepACcDkmRcLk=,tag:aLNCu7cE6nUdH5uSk2p1SQ==,type:str]
+                  pathType: ENC[AES256_GCM,data:w5A7QKco,iv:2Qcfk3PoaWMoPJAuz+D/JkWEQZsfeoSsPGwWf/uG+K8=,tag:gz6Zz0Yrw8V87Z3Dwl13Xg==,type:str]
                   backend:
                     service:
-                        name: ENC[AES256_GCM,data:rBRwWOUEiHK3Wuf3U6g=,iv:k9gHOQK7z5ZyFMi7LAEOwiMafjSc3R4FoxC6UaDQmek=,tag:mz4DO2EzSZoEwnmq9tF4UQ==,type:str]
+                        name: ENC[AES256_GCM,data:nPVslTENVZDusZdimiQ=,iv:ehcBWTxoZu6f8ncUT+Dufykt0+cEq37jLs5L2dwlysY=,tag:yD5wQi/ULCp5bb9s7vQL6g==,type:str]
                         port:
-                            number: ENC[AES256_GCM,data:0k7b9A==,iv:wQGkgD2/C2IRhJ0AWM7n8UC+t8JxQCCh4hMMk6Laxcs=,tag:wdSZJhQO+R+MIxKAg2Wwcg==,type:int]
-        - host: ENC[AES256_GCM,data:+gNGfWY5C7JlqyXSwcaLoQo+yw==,iv:Ev/K/6LknDBtpkgkuhzU4SR+c5PqPFxnlRndcXcZHeg=,tag:QM3c9S/vVdHffU1Qyak0SQ==,type:str]
+                            number: ENC[AES256_GCM,data:mfjVeA==,iv:KKPZ5B4LfK85jaans1bOTypq5vZLYS3zlqBykfOnCQg=,tag:MIfOgBIQv/970/hNbXb4+A==,type:int]
+        - host: ENC[AES256_GCM,data:bG5Jrio4DCNkWS82BrbpeL8RQA==,iv:zZPczzJsk14F849iD4kCzoCYr7olKeyorXVSDnOxseI=,tag:LuVQITKWEJtrBlY4i8lqtA==,type:str]
           http:
             paths:
-                - path: ENC[AES256_GCM,data:YA==,iv:Rq/2kTcPWlglDOguHBgtAkCV2VtdA+wCyMRmCAE64FI=,tag:IgQwQf7aXOzAiAcPtqYULw==,type:str]
-                  pathType: ENC[AES256_GCM,data:gId3FRd1,iv:Y4pv1B8BOrxwd8FBLFM+VZ6r4spe9NwuD8wMCwv1I0M=,tag:RiEgmGcQSCYU/E5G4H7GIQ==,type:str]
+                - path: ENC[AES256_GCM,data:FQ==,iv:x08fYIwan/T/GINwEYmBG85oIDNMzXPbb00vYMuVW2Q=,tag:jldnIdtzgma5ljVDINvR6Q==,type:str]
+                  pathType: ENC[AES256_GCM,data:D7JQZnPf,iv:hQC9pWVvV4Lg34nR9faaOKeVrpuvp2cnZLI4rIhYn5s=,tag:eHotbJXK5e+tJXzJBPYTSw==,type:str]
                   backend:
                     service:
-                        name: ENC[AES256_GCM,data:2usgMEVaVWrVN0C9st0=,iv:R4t8gYvd2OXYPoMcKIgyc9WF+px9wpOgjnHUfa11pXg=,tag:wR55XcIAA55ZSOOCb9UR3A==,type:str]
+                        name: ENC[AES256_GCM,data:paVoIaNdK7sD4NaWGGM=,iv:dOsn3VlIDrVTqxB/4X/G4vOviQsGau/QY3TpeZ1ZbCU=,tag:pfC6pAyJHN4KWUqgTJDLoA==,type:str]
                         port:
-                            number: ENC[AES256_GCM,data:KRQIWA==,iv:/PKFql/YG7VoEgUEt2+i/kxuI8dbbvBJhjVJgootW6g=,tag:NLx826r9q18IKICll7Wftg==,type:int]
+                            number: ENC[AES256_GCM,data:ue5MIA==,iv:A4XEvAQRP+ehfzeLskbEN5l4EKhmNjwuMpEn+Ke7U0I=,tag:KwD5+dIbazEjFSBTsxoOew==,type:int]
+        - host: ENC[AES256_GCM,data:AjtBQ7C0yDWL/xv0P50=,iv:Px/90PJtwA3irmfJVJqwbsobVSfbMnwKviOBmHmfE34=,tag:NWjj533Jv/AYFDCxcs03pA==,type:str]
+          http:
+            paths:
+                - path: ENC[AES256_GCM,data:2Q==,iv:puFqBnlPbMTVE8CLz46w9F/jJuSEtRi93hhuxSHgf24=,tag:OGb+oiD8SmGdylkyfstIpQ==,type:str]
+                  pathType: ENC[AES256_GCM,data:0CiR1Eif,iv:cTPjPuBezjttZa4TboBDDdiWSRup5A2oBKydXTCfcfk=,tag:Wjjwd7umaXfVr259VPiDAw==,type:str]
+                  backend:
+                    service:
+                        name: ENC[AES256_GCM,data:YvZF/eDa3fs50fNm,iv:4VoYrTBe31SsB1uECkF9ZJd48ZEKlHC6NkBHcUjlsAQ=,tag:Xezz6UaKCrKN9Whqh/dE+A==,type:str]
+                        port:
+                            number: ENC[AES256_GCM,data:VMPMfg==,iv:5FdItmgMCrtluM63mt4RtGB7cSt21vuKAOPo20X3BiE=,tag:og8WoH5a/KCK5uNIOBQOgQ==,type:int]
 sops:
     kms: []
     gcp_kms: []
@@ -128,14 +177,14 @@ sops:
         - recipient: age17nr093c37k5732q9ksxf2p785wd9fxjej7axzcn66lm6muys0eks9kmzts
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAra1RpVWlqaFZHZHNXWGFY
-            QmpKMUNncUFzWVF6K0FNMHdkR2h4M1g2U0JnClh2aTNzcEs2M2NoMWhMNUVLMGxi
-            SG9aSUhnSDhIbEd1cU1Nb09nOTl4L0kKLS0tIDVVVHhxU1IrYjlYeDZ1cGlsVm5z
-            QXZERGlHNDcvYkRNUG8zby94VmFZY0kKgaWRksO1WPxEzTGPamr+I9qqnF3Y4a+Y
-            34VS41Vpi4at08jcbH+HN6GvhEhN1qZYkjT7XIwdXHqWS7/t0PdH4w==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBVmsyakFVbUx0RnloOU1K
+            T2xBZ0dCVUxoMzEvblYraDFmQzgwVG1wVVVZCi9zSVhQL0tIV2xzNTg2YkQwdzZV
+            WHc4MmRWem1vcnAzU3lKRVBKeHJjV28KLS0tIFhpcXlJdCt5MWQyNE1OaEVtQU81
+            WHZDYnFkSTdweW5WMUF0WENnZXk5Rk0KlAzXMQAJ6N0T+KqTFTHRIS2GJguA1nXE
+            q2xOSDwhOoWcXNzhwyRRTyYopQ9CepVT5NxQwrcJbSUtk+qHFReOJg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-08-31T22:37:29Z"
-    mac: ENC[AES256_GCM,data:X1nV2mufYDbwfhyrvCaGfilCBld9JxfuVmiFIDFVNl6Kvu0mpxXTAzTudk1v3G1puWQM1YYQotIeSLVH/vgHZP1lymhVoFKZEDoCT4Qy9ZR5lVkRaeGfx9SB2RWAJ5HdbQuTwW3DXQsrKKHm4+ehjwaY4EE/E61YVzzXOOA3DD4=,iv:3mBqOL0DQwV82HjrVxiJRdVMnX3lZZAb7fxsENcSQmc=,tag:cfz2hqEErUNJEskQ/KxWrQ==,type:str]
+    lastmodified: "2023-09-01T18:19:37Z"
+    mac: ENC[AES256_GCM,data:KvajVI3yWJXv9JwmvPw7wF4H+SfGt15IL5vN3Z1AL6qYf/+nxaccd24I7Tb7vVue1KO3mo8QjFxZ7W445+f4ced9ykqhImWgvh+xYtXuS1dspw12YOuWZ/S/wwJijkd6WcMxe0506kfRefqqAUMaYgHFhd5LGXqR1avvLQMDHQU=,iv:CLp4iOXCV+dZxtLYZHas4m74LqOq1tZlU9Hfm1L6TfE=,tag:d6XBpgTusfXB2CvVNZaZQw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData|externalName|tls|rules|value|key|port|targetPort)$
     version: 3.7.3
@@ -146,28 +195,33 @@ metadata:
     name: home-ingress
     namespace: networking
     annotations:
+        external-dns.alpha.kubernetes.io/target: ingress.dxas90.xyz
         ingress.kubernetes.io/proxy-body-size: "0"
         ingress.kubernetes.io/ssl-redirect: "true"
+        konghq.com/override: https-only
         kubernetes.io/tls-acme: "true"
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.tls: "true"
+        traefik.ingress.kubernetes.io/router.middlewares: networking-secured@kubernetescrd
     labels:
         use-http01-solver: "true"
 spec:
-    ingressClassName: external
+    ingressClassName: traefik
     tls:
         - hosts:
-            - ENC[AES256_GCM,data:qZt/EBJ9fXi2jxsI+zEA,iv:bErKgxMAmXJLNfDDcjRgLB8zj0MnohMRFpcUaTV8H6o=,tag:8E8Sw6nJkz1W6h09RQW/qQ==,type:str]
-          secretName: ENC[AES256_GCM,data:djL5SqNesAS39xcLI60wuR50H4g=,iv:DejvOUJsYRMwVTne49u90y3OQmtOM25BdKWi5QXVX3M=,tag:uU6V/5uZID3raBBhOx46EQ==,type:str]
+            - ENC[AES256_GCM,data:lSVKI58n3+BbT31tOw4d,iv:M1WKOpsb0p/9sO3Xi3Vxz6r06nOFDjOHqi43BenU/GE=,tag:OYlmTJcB7CPG1zGU7sWoEw==,type:str]
+          secretName: ENC[AES256_GCM,data:p5A4ZVCSCQJLlUwlLYf+5XKgzmo=,iv:ckJuXaz6dBZrbn3ch7rIEUxKFI30bW+v+ZONcXvIdIE=,tag:e4nYflDrfRthu08m0qpnPg==,type:str]
     rules:
-        - host: ENC[AES256_GCM,data:DhOW8sUAp4eAVvV/a801,iv:RQur5q5CAJ18Fm7DemsAphJynawnW/AwrHrc/OervmE=,tag:zFBf8tBkDQjBhZA6CL59oA==,type:str]
+        - host: ENC[AES256_GCM,data:OoaG7H0k2rnUPansrAVm,iv:SJUEMa/QJzXMH6qaAiVGxLZh0+bIWFk/OcJUk9Cbk2k=,tag:hOdrl/n/KymzTPQ++MRDSQ==,type:str]
           http:
             paths:
-                - path: ENC[AES256_GCM,data:lQ==,iv:irKLKa6i3lNQJXcxlMGPxdKB0+UoVwonly2s1nX38aw=,tag:sGBQl7SPHth8J2VljGmZKw==,type:str]
-                  pathType: ENC[AES256_GCM,data:M47yLSqehvHZl91Rs/nxv3wmI8rDEw==,iv:pvOjxcBO+ICbc5hhP3gDO0cbkszNT86o6lBAIMdkoOQ=,tag:ZTAjzsp3TUXbq8T1tfRZKw==,type:str]
+                - path: ENC[AES256_GCM,data:bA==,iv:QsYGLB5LOLSktdvbVhJeDNJwvizV/awU0SxORDefHsU=,tag:LUuncypm9gSZfU37y9BMWw==,type:str]
+                  pathType: ENC[AES256_GCM,data:Dyci/omAGIMdf9zST+dj3EI8xjFtfA==,iv:7jvvfsb+q3j8UqKf2JVgWM9ajtUaHXTQq4dfzf72Y0k=,tag:TSGl0ZMVAR4vrOtBtUGwog==,type:str]
                   backend:
                     service:
-                        name: ENC[AES256_GCM,data:Sz38550msn4xVqsA,iv:ayCiH+Eg8flUCjLfETIa39oFfKcOhKZjN9BZ9Xx0dLo=,tag:LzvqS7+EIy8RZlJG2G7NAQ==,type:str]
+                        name: ENC[AES256_GCM,data:MPjQsZcHFPkmkQp4,iv:B6rU6LyLZnj1uO4qdcwndEpRwDgTGnN5rcSqLNvU+sQ=,tag:M7jyA637c5O2uzsW5sAt/Q==,type:str]
                         port:
-                            number: ENC[AES256_GCM,data:xwpisA==,iv:WX93AdpKxbyVwQuh9XMtrPqiUDJzZRPjZOcmCKEf7xQ=,tag:ilnglFFXTWrBCkydJZHUiw==,type:int]
+                            number: ENC[AES256_GCM,data:cYInJw==,iv:vrCaWxXwS4+iZHXuOax91NOVVn8dF/YI8a7AoV08AVw=,tag:PadvKM/kVn3k4SG7Dnw1hg==,type:int]
 sops:
     kms: []
     gcp_kms: []
@@ -177,14 +231,248 @@ sops:
         - recipient: age17nr093c37k5732q9ksxf2p785wd9fxjej7axzcn66lm6muys0eks9kmzts
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAra1RpVWlqaFZHZHNXWGFY
-            QmpKMUNncUFzWVF6K0FNMHdkR2h4M1g2U0JnClh2aTNzcEs2M2NoMWhMNUVLMGxi
-            SG9aSUhnSDhIbEd1cU1Nb09nOTl4L0kKLS0tIDVVVHhxU1IrYjlYeDZ1cGlsVm5z
-            QXZERGlHNDcvYkRNUG8zby94VmFZY0kKgaWRksO1WPxEzTGPamr+I9qqnF3Y4a+Y
-            34VS41Vpi4at08jcbH+HN6GvhEhN1qZYkjT7XIwdXHqWS7/t0PdH4w==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBVmsyakFVbUx0RnloOU1K
+            T2xBZ0dCVUxoMzEvblYraDFmQzgwVG1wVVVZCi9zSVhQL0tIV2xzNTg2YkQwdzZV
+            WHc4MmRWem1vcnAzU3lKRVBKeHJjV28KLS0tIFhpcXlJdCt5MWQyNE1OaEVtQU81
+            WHZDYnFkSTdweW5WMUF0WENnZXk5Rk0KlAzXMQAJ6N0T+KqTFTHRIS2GJguA1nXE
+            q2xOSDwhOoWcXNzhwyRRTyYopQ9CepVT5NxQwrcJbSUtk+qHFReOJg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-08-31T22:37:29Z"
-    mac: ENC[AES256_GCM,data:X1nV2mufYDbwfhyrvCaGfilCBld9JxfuVmiFIDFVNl6Kvu0mpxXTAzTudk1v3G1puWQM1YYQotIeSLVH/vgHZP1lymhVoFKZEDoCT4Qy9ZR5lVkRaeGfx9SB2RWAJ5HdbQuTwW3DXQsrKKHm4+ehjwaY4EE/E61YVzzXOOA3DD4=,iv:3mBqOL0DQwV82HjrVxiJRdVMnX3lZZAb7fxsENcSQmc=,tag:cfz2hqEErUNJEskQ/KxWrQ==,type:str]
+    lastmodified: "2023-09-01T18:19:37Z"
+    mac: ENC[AES256_GCM,data:KvajVI3yWJXv9JwmvPw7wF4H+SfGt15IL5vN3Z1AL6qYf/+nxaccd24I7Tb7vVue1KO3mo8QjFxZ7W445+f4ced9ykqhImWgvh+xYtXuS1dspw12YOuWZ/S/wwJijkd6WcMxe0506kfRefqqAUMaYgHFhd5LGXqR1avvLQMDHQU=,iv:CLp4iOXCV+dZxtLYZHas4m74LqOq1tZlU9Hfm1L6TfE=,tag:d6XBpgTusfXB2CvVNZaZQw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData|externalName|tls|rules|value|key|port|targetPort)$
+    version: 3.7.3
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: home-dxas90-xyz-redirect
+    namespace: networking
+    annotations:
+        traefik.ingress.kubernetes.io/router.entrypoints: web
+        traefik.ingress.kubernetes.io/router.middlewares: networking-secured@kubernetescrd
+spec:
+    ingressClassName: traefik
+    rules:
+        - host: ENC[AES256_GCM,data:BXcGc3Q2tz5tI44QBKvC,iv:YCQnHZn2r9kFOCI9Vb+pAOUbgfncdGlydsVt0gDlHcA=,tag:FuGh881/VKxhrdk8lmryOw==,type:str]
+          http:
+            paths:
+                - path: ENC[AES256_GCM,data:iQ==,iv:5vPo/QpfPYw14kJldczFA9QdjnDad4sT1/3ERe5tXQc=,tag:SmLk3EZKFzYpQpu9vIlkdg==,type:str]
+                  pathType: ENC[AES256_GCM,data:q67iwPi02Zy1mYNGzQLuCKy6y2L0JQ==,iv:VvIBGJEoCIwMG+uiKjL+ieeQAjiV6ohwkfvs68FFplA=,tag:Y7SG69obVXdjWiy9/cCemA==,type:str]
+                  backend:
+                    service:
+                        name: ENC[AES256_GCM,data:9hlroMj7NEI2IKR1,iv:rx4XL5wEV/TVuCnTgqO2c1ytUckEHPTm8m3rt2H0HVM=,tag:ICYKtc1vu5DKmDyTA4P+5A==,type:str]
+                        port:
+                            number: ENC[AES256_GCM,data:stdlpg==,iv:krknRlJqCr4gAfHurK7A1i3YgggMopJK1d+xNn6q+5M=,tag:bVIMFen3yAQ/xlrGX6UJdw==,type:int]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age17nr093c37k5732q9ksxf2p785wd9fxjej7axzcn66lm6muys0eks9kmzts
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBVmsyakFVbUx0RnloOU1K
+            T2xBZ0dCVUxoMzEvblYraDFmQzgwVG1wVVVZCi9zSVhQL0tIV2xzNTg2YkQwdzZV
+            WHc4MmRWem1vcnAzU3lKRVBKeHJjV28KLS0tIFhpcXlJdCt5MWQyNE1OaEVtQU81
+            WHZDYnFkSTdweW5WMUF0WENnZXk5Rk0KlAzXMQAJ6N0T+KqTFTHRIS2GJguA1nXE
+            q2xOSDwhOoWcXNzhwyRRTyYopQ9CepVT5NxQwrcJbSUtk+qHFReOJg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-09-01T18:19:37Z"
+    mac: ENC[AES256_GCM,data:KvajVI3yWJXv9JwmvPw7wF4H+SfGt15IL5vN3Z1AL6qYf/+nxaccd24I7Tb7vVue1KO3mo8QjFxZ7W445+f4ced9ykqhImWgvh+xYtXuS1dspw12YOuWZ/S/wwJijkd6WcMxe0506kfRefqqAUMaYgHFhd5LGXqR1avvLQMDHQU=,iv:CLp4iOXCV+dZxtLYZHas4m74LqOq1tZlU9Hfm1L6TfE=,tag:d6XBpgTusfXB2CvVNZaZQw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData|externalName|tls|rules|value|key|port|targetPort)$
+    version: 3.7.3
+---
+# Redirect to https
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+    name: web-redirect
+    namespace: networking
+spec:
+    redirectScheme:
+        scheme: https
+        permanent: true
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age17nr093c37k5732q9ksxf2p785wd9fxjej7axzcn66lm6muys0eks9kmzts
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBVmsyakFVbUx0RnloOU1K
+            T2xBZ0dCVUxoMzEvblYraDFmQzgwVG1wVVVZCi9zSVhQL0tIV2xzNTg2YkQwdzZV
+            WHc4MmRWem1vcnAzU3lKRVBKeHJjV28KLS0tIFhpcXlJdCt5MWQyNE1OaEVtQU81
+            WHZDYnFkSTdweW5WMUF0WENnZXk5Rk0KlAzXMQAJ6N0T+KqTFTHRIS2GJguA1nXE
+            q2xOSDwhOoWcXNzhwyRRTyYopQ9CepVT5NxQwrcJbSUtk+qHFReOJg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-09-01T18:19:37Z"
+    mac: ENC[AES256_GCM,data:KvajVI3yWJXv9JwmvPw7wF4H+SfGt15IL5vN3Z1AL6qYf/+nxaccd24I7Tb7vVue1KO3mo8QjFxZ7W445+f4ced9ykqhImWgvh+xYtXuS1dspw12YOuWZ/S/wwJijkd6WcMxe0506kfRefqqAUMaYgHFhd5LGXqR1avvLQMDHQU=,iv:CLp4iOXCV+dZxtLYZHas4m74LqOq1tZlU9Hfm1L6TfE=,tag:d6XBpgTusfXB2CvVNZaZQw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData|externalName|tls|rules|value|key|port|targetPort)$
+    version: 3.7.3
+---
+# Latency Check
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+    name: latency-check
+    namespace: networking
+spec:
+    circuitBreaker:
+        expression: LatencyAtQuantileMS(50.0) > 100
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age17nr093c37k5732q9ksxf2p785wd9fxjej7axzcn66lm6muys0eks9kmzts
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBVmsyakFVbUx0RnloOU1K
+            T2xBZ0dCVUxoMzEvblYraDFmQzgwVG1wVVVZCi9zSVhQL0tIV2xzNTg2YkQwdzZV
+            WHc4MmRWem1vcnAzU3lKRVBKeHJjV28KLS0tIFhpcXlJdCt5MWQyNE1OaEVtQU81
+            WHZDYnFkSTdweW5WMUF0WENnZXk5Rk0KlAzXMQAJ6N0T+KqTFTHRIS2GJguA1nXE
+            q2xOSDwhOoWcXNzhwyRRTyYopQ9CepVT5NxQwrcJbSUtk+qHFReOJg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-09-01T18:19:37Z"
+    mac: ENC[AES256_GCM,data:KvajVI3yWJXv9JwmvPw7wF4H+SfGt15IL5vN3Z1AL6qYf/+nxaccd24I7Tb7vVue1KO3mo8QjFxZ7W445+f4ced9ykqhImWgvh+xYtXuS1dspw12YOuWZ/S/wwJijkd6WcMxe0506kfRefqqAUMaYgHFhd5LGXqR1avvLQMDHQU=,iv:CLp4iOXCV+dZxtLYZHas4m74LqOq1tZlU9Hfm1L6TfE=,tag:d6XBpgTusfXB2CvVNZaZQw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData|externalName|tls|rules|value|key|port|targetPort)$
+    version: 3.7.3
+---
+# Enable gzip compression
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+    name: compress
+    namespace: networking
+spec:
+    compress: {}
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age17nr093c37k5732q9ksxf2p785wd9fxjej7axzcn66lm6muys0eks9kmzts
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBVmsyakFVbUx0RnloOU1K
+            T2xBZ0dCVUxoMzEvblYraDFmQzgwVG1wVVVZCi9zSVhQL0tIV2xzNTg2YkQwdzZV
+            WHc4MmRWem1vcnAzU3lKRVBKeHJjV28KLS0tIFhpcXlJdCt5MWQyNE1OaEVtQU81
+            WHZDYnFkSTdweW5WMUF0WENnZXk5Rk0KlAzXMQAJ6N0T+KqTFTHRIS2GJguA1nXE
+            q2xOSDwhOoWcXNzhwyRRTyYopQ9CepVT5NxQwrcJbSUtk+qHFReOJg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-09-01T18:19:37Z"
+    mac: ENC[AES256_GCM,data:KvajVI3yWJXv9JwmvPw7wF4H+SfGt15IL5vN3Z1AL6qYf/+nxaccd24I7Tb7vVue1KO3mo8QjFxZ7W445+f4ced9ykqhImWgvh+xYtXuS1dspw12YOuWZ/S/wwJijkd6WcMxe0506kfRefqqAUMaYgHFhd5LGXqR1avvLQMDHQU=,iv:CLp4iOXCV+dZxtLYZHas4m74LqOq1tZlU9Hfm1L6TfE=,tag:d6XBpgTusfXB2CvVNZaZQw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData|externalName|tls|rules|value|key|port|targetPort)$
+    version: 3.7.3
+---
+# Here, an average of 100 requests per second is allowed.
+# In addition, a burst of 50 requests is allowed.
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+    name: ratelimit
+    namespace: networking
+spec:
+    rateLimit:
+        average: 100
+        burst: 50
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age17nr093c37k5732q9ksxf2p785wd9fxjej7axzcn66lm6muys0eks9kmzts
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBVmsyakFVbUx0RnloOU1K
+            T2xBZ0dCVUxoMzEvblYraDFmQzgwVG1wVVVZCi9zSVhQL0tIV2xzNTg2YkQwdzZV
+            WHc4MmRWem1vcnAzU3lKRVBKeHJjV28KLS0tIFhpcXlJdCt5MWQyNE1OaEVtQU81
+            WHZDYnFkSTdweW5WMUF0WENnZXk5Rk0KlAzXMQAJ6N0T+KqTFTHRIS2GJguA1nXE
+            q2xOSDwhOoWcXNzhwyRRTyYopQ9CepVT5NxQwrcJbSUtk+qHFReOJg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-09-01T18:19:37Z"
+    mac: ENC[AES256_GCM,data:KvajVI3yWJXv9JwmvPw7wF4H+SfGt15IL5vN3Z1AL6qYf/+nxaccd24I7Tb7vVue1KO3mo8QjFxZ7W445+f4ced9ykqhImWgvh+xYtXuS1dspw12YOuWZ/S/wwJijkd6WcMxe0506kfRefqqAUMaYgHFhd5LGXqR1avvLQMDHQU=,iv:CLp4iOXCV+dZxtLYZHas4m74LqOq1tZlU9Hfm1L6TfE=,tag:d6XBpgTusfXB2CvVNZaZQw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData|externalName|tls|rules|value|key|port|targetPort)$
+    version: 3.7.3
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+    name: custom-headers
+    namespace: networking
+spec:
+    headers:
+        customRequestHeaders:
+            X-Script-Name: test
+            X-Forwarded-Proto: https
+        customResponseHeaders:
+            X-Custom-Response-Header: value
+            X-Forwarded-Proto: https
+        hostsProxyHeaders:
+            - X-Forwarded-For
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age17nr093c37k5732q9ksxf2p785wd9fxjej7axzcn66lm6muys0eks9kmzts
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBVmsyakFVbUx0RnloOU1K
+            T2xBZ0dCVUxoMzEvblYraDFmQzgwVG1wVVVZCi9zSVhQL0tIV2xzNTg2YkQwdzZV
+            WHc4MmRWem1vcnAzU3lKRVBKeHJjV28KLS0tIFhpcXlJdCt5MWQyNE1OaEVtQU81
+            WHZDYnFkSTdweW5WMUF0WENnZXk5Rk0KlAzXMQAJ6N0T+KqTFTHRIS2GJguA1nXE
+            q2xOSDwhOoWcXNzhwyRRTyYopQ9CepVT5NxQwrcJbSUtk+qHFReOJg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-09-01T18:19:37Z"
+    mac: ENC[AES256_GCM,data:KvajVI3yWJXv9JwmvPw7wF4H+SfGt15IL5vN3Z1AL6qYf/+nxaccd24I7Tb7vVue1KO3mo8QjFxZ7W445+f4ced9ykqhImWgvh+xYtXuS1dspw12YOuWZ/S/wwJijkd6WcMxe0506kfRefqqAUMaYgHFhd5LGXqR1avvLQMDHQU=,iv:CLp4iOXCV+dZxtLYZHas4m74LqOq1tZlU9Hfm1L6TfE=,tag:d6XBpgTusfXB2CvVNZaZQw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData|externalName|tls|rules|value|key|port|targetPort)$
+    version: 3.7.3
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+    name: secured
+    namespace: networking
+spec:
+    chain:
+        middlewares:
+            - name: web-redirect
+            - name: latency-check
+            - name: compress
+            - name: ratelimit
+            - name: custom-headers
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age17nr093c37k5732q9ksxf2p785wd9fxjej7axzcn66lm6muys0eks9kmzts
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBVmsyakFVbUx0RnloOU1K
+            T2xBZ0dCVUxoMzEvblYraDFmQzgwVG1wVVVZCi9zSVhQL0tIV2xzNTg2YkQwdzZV
+            WHc4MmRWem1vcnAzU3lKRVBKeHJjV28KLS0tIFhpcXlJdCt5MWQyNE1OaEVtQU81
+            WHZDYnFkSTdweW5WMUF0WENnZXk5Rk0KlAzXMQAJ6N0T+KqTFTHRIS2GJguA1nXE
+            q2xOSDwhOoWcXNzhwyRRTyYopQ9CepVT5NxQwrcJbSUtk+qHFReOJg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-09-01T18:19:37Z"
+    mac: ENC[AES256_GCM,data:KvajVI3yWJXv9JwmvPw7wF4H+SfGt15IL5vN3Z1AL6qYf/+nxaccd24I7Tb7vVue1KO3mo8QjFxZ7W445+f4ced9ykqhImWgvh+xYtXuS1dspw12YOuWZ/S/wwJijkd6WcMxe0506kfRefqqAUMaYgHFhd5LGXqR1avvLQMDHQU=,iv:CLp4iOXCV+dZxtLYZHas4m74LqOq1tZlU9Hfm1L6TfE=,tag:d6XBpgTusfXB2CvVNZaZQw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData|externalName|tls|rules|value|key|port|targetPort)$
     version: 3.7.3
