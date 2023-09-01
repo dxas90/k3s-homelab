@@ -5,4 +5,4 @@ metadata:
   name: cluster-settings-user
   namespace: flux-system
 data:
-  CURRENT_EXTERNAL_IP: "${CURRENT_EXTERNAL_IP}"
+  EXTRA_VALUE: "value"
