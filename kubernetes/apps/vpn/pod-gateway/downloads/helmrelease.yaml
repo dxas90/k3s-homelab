@@ -50,8 +50,6 @@ spec:
             value: "51820"
           - name: "PORT"
             value: "51820"
-          - name: "DNS_ADDRESS"
-            value: ${CURRENT_IP}
           - name: "TZ"
             value: ${TIMEZONE}
           - name: "DNS_KEEP_NAMESERVER"
