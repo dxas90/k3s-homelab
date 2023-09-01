@@ -32,3 +32,6 @@ k3s_server_manifests_templates:
 # /var/lib/rancher/k3s/agent/pod-manifests
 k3s_server_pod_manifests_templates:
   - kube-vip-static-pod.yaml.j2
+
+## custom work for k3s nodes
+clean_snapd: true
