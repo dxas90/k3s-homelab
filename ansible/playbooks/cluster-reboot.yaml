@@ -1,3 +1,8 @@
+#!/usr/bin/env ansible-playbook
+# -*- coding: utf-8 -*-
+# When I wrote this, only God and I understood what I was doing
+# Now, God only knows
+# vim:ff=unix ts=2 sw=2 ai expandtab
 ---
 - name: Reboot
   hosts: all
@@ -8,6 +13,7 @@
     - name: Pausing for 5 seconds...
       ansible.builtin.pause:
         seconds: 5
+      delegate_to: localhost
   tasks:
     - name: Reboot
       ansible.builtin.reboot:

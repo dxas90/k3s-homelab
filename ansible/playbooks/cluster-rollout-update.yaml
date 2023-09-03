@@ -1,3 +1,8 @@
+#!/usr/bin/env ansible-playbook
+# -*- coding: utf-8 -*-
+# When I wrote this, only God and I understood what I was doing
+# Now, God only knows
+# vim:ff=unix ts=2 sw=2 ai expandtab
 ---
 # https://github.com/kevincoakley/ansible-role-k8s-rolling-update
 - name: Cluster rollout update
@@ -36,7 +41,7 @@
           ansible.builtin.command: "kubectl drain --pod-selector='app!=rook-ceph-osd,app!=csi-attacher,app!=csi-provisioner' --ignore-daemonsets --delete-emptydir-data --force --grace-period=300 {{ inventory_hostname }}"
           delegate_to: "{{ groups['master'][0] }}"
           changed_when: false
-    
+
         ### pod_selectors feature in upcoming kubernetes.core 2.5.0 ###
         # - name: Drain
         #   kubernetes.core.k8s_drain:

@@ -30,4 +30,4 @@ spec:
     - localASN: 65551
       neighbors:
         - peerASN: 65552
-          peerAddress: 10.4.0.1
+          peerAddress: 10.4.0.254
