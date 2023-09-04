@@ -4,3 +4,6 @@ kind: Kustomization
 namespace: kube-system
 resources:
   - ./helmrelease.yaml
+generatorOptions:
+  annotations:
+    kustomize.toolkit.fluxcd.io/substitute: disabled

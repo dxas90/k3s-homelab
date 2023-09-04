@@ -26,13 +26,13 @@ kubernetes:
         k3s-pve-worker-3:
           ansible_user: ubuntu
           ansible_host: 10.4.0.33
-homelab:
-  children:
-    servers:
-      hosts:
-        asgard:
-          ansible_user: vagrant
-          ansible_host: 192.56.0.254
-        olympus:
-          ansible_user: vagrant
-          ansible_host: 192.56.0.253
+# homelab:
+#   children:
+#     servers:
+#       hosts:
+#         asgard:
+#           ansible_user: vagrant
+#           ansible_host: 192.56.0.254
+#         olympus:
+#           ansible_user: vagrant
+#           ansible_host: 192.56.0.253
