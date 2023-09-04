@@ -1,0 +1,35 @@
+# https://github.com/TwiN/gatus/blob/master/.examples/docker-compose-sqlite-storage/config/config.yaml
+---
+web:
+  port: ${CUSTOM_WEB_PORT}
+storage:
+  type: sqlite
+  path: /data/gatus_data.db
+  caching: true
+metrics: true
+debug: false
+ui:
+  title: Health Status
+  header: Cluster Health Status
+alerting:
+connectivity:
+  checker:
+    target: 1.1.1.1:53
+    interval: 1m
+endpoints:
+  - name: status
+    group: external
+    url: https://status.${SECRET_DOMAIN}
+    interval: 1m
+    client:
+      dns-resolver: tcp://1.1.1.1:53
+    conditions:
+      - "[STATUS] == 200"
+  - name: status-dns-query
+    url: "8.8.8.8" # Address of the DNS server to use
+    dns:
+      query-name: "status.${SECRET_DOMAIN}"
+      query-type: "CNAME"
+    conditions:
+      - "[BODY] == ingress.${SECRET_DOMAIN}"
+      - "[DNS_RCODE] == NOERROR"
