@@ -13,6 +13,7 @@ parameters:
   subDir: ${pvc.metadata.namespace}/${pvc.metadata.name}
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
+allowVolumeExpansion: true
 mountOptions:
   - hard
   - noatime

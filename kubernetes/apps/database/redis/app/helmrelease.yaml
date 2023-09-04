@@ -30,6 +30,8 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    global:
+      storageClass: "local-path"
     auth:
       enabled: false
       sentinel: false
