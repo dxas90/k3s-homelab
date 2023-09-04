@@ -5,7 +5,7 @@ metadata:
   name: cluster-apps-tools-gitea
   namespace: flux-system
 spec:
-  path: ./kubernetes/cluster-home/apps/tools/gitea
+  path: ./kubernetes/apps/tools/gitea
   prune: true
   sourceRef:
     kind: GitRepository
