@@ -8,8 +8,7 @@ metadata:
     app.kubernetes.io/name: gitea
 spec:
   accessModes:
-    - ReadWriteMany
-  volumeName: gitea
+    - ReadWriteOnce
   resources:
     requests:
       storage: 2Gi
