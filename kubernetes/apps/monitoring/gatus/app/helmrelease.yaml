@@ -17,7 +17,7 @@ spec:
   maxHistory: 2
   install:
     remediation:
-      retries: 3
+      retries: -1
   upgrade:
     cleanupOnFail: true
     remediation:
@@ -102,6 +102,8 @@ spec:
       gatus-data:
         enabled: true
         storageClass: truenas-csi
+        accessMode: ReadWriteMany
+        size: 0.5Gi
         mountPath: /data
     resources:
       requests:
