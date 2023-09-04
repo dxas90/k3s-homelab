@@ -1,0 +1,16 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: gitea-pvc
+  namespace: tools
+  labels:
+    app.kubernetes.io/name: gitea
+spec:
+  accessModes:
+    - ReadWriteMany
+  volumeName: gitea
+  resources:
+    requests:
+      storage: 2Gi
+  storageClassName: "truenas-csi"

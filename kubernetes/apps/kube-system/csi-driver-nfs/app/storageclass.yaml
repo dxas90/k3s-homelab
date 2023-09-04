@@ -10,7 +10,7 @@ provisioner: nfs.csi.k8s.io
 parameters:
   server: 192.168.1.254
   share: /mnt/bigguy/nfs
-  subDir: ${pvc.metadata.namespace}/${pvc.metadata.name}
+  subDir: ${pvc.metadata.namespace}/${pv.metadata.name}/${pvc.metadata.name}
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
 allowVolumeExpansion: true
