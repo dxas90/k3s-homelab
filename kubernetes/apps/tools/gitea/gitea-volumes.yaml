@@ -6,6 +6,7 @@ metadata:
   namespace: tools
   labels:
     app.kubernetes.io/name: gitea
+    app.kubernetes.io/sci-provider: nfs
 spec:
   accessModes:
     - ReadWriteOnce
