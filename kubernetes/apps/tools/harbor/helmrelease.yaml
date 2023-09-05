@@ -47,9 +47,11 @@ spec:
           subPath: "chartmuseum"
           storageClass: "truenas-csi"
         jobservice:
-          existingClaim: "harbor-pvc"
-          subPath: "jobservice"
-          storageClass: "truenas-csi"
+          jobLog:
+            existingClaim: "harbor-pvc"
+            subPath: "jobservice"
+            storageClass: "truenas-csi"
+            size: 0.5Gi
         database:
           existingClaim: "harbor-pvc"
           subPath: "database"
