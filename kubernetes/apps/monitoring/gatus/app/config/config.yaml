@@ -16,6 +16,9 @@ connectivity:
   checker:
     target: 1.1.1.1:53
     interval: 1m
+    ui:
+      hide-hostname: true
+      hide-url: true
 endpoints:
   - name: status
     group: external
@@ -31,5 +34,5 @@ endpoints:
       query-name: "status.${SECRET_DOMAIN}"
       query-type: "CNAME"
     conditions:
-      - "[BODY] == ingress.${SECRET_DOMAIN}"
+      - "[BODY] == external.${SECRET_DOMAIN}"
       - "[DNS_RCODE] == NOERROR"
