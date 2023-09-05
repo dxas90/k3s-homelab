@@ -37,5 +37,5 @@ endpoints:
       query-name: "status.${SECRET_DOMAIN}"
       query-type: "CNAME"
     conditions:
-      - "[BODY] == external.${SECRET_DOMAIN}"
+      - "len([BODY]) == 0"
       - "[DNS_RCODE] == NOERROR"

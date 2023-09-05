@@ -51,6 +51,7 @@ spec:
         - ReadWriteMany
       labels:
         type: local
+        csi-driver: nfs
         app.kubernetes.io/name: gitea
       annotations:
         helm.sh/resource-policy: keep
