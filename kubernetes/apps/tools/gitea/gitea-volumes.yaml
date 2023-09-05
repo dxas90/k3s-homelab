@@ -5,8 +5,9 @@ metadata:
   name: gitea-pvc
   namespace: tools
   labels:
+    type: local
     app.kubernetes.io/name: gitea
-    app.kubernetes.io/sci-provider: nfs
+    app.kubernetes.io/csi-provider: nfs
 spec:
   accessModes:
     - ReadWriteOnce

@@ -41,21 +41,27 @@ spec:
         registry:
           existingClaim: "harbor-pvc"
           subPath: "registry"
+          storageClass: "truenas-csi"
         chartmuseum:
           existingClaim: "harbor-pvc"
           subPath: "chartmuseum"
+          storageClass: "truenas-csi"
         jobservice:
           existingClaim: "harbor-pvc"
           subPath: "jobservice"
+          storageClass: "truenas-csi"
         database:
           existingClaim: "harbor-pvc"
           subPath: "database"
+          storageClass: "truenas-csi"
         redis:
           existingClaim: "harbor-pvc"
           subPath: "redis"
+          storageClass: "truenas-csi"
         trivy:
           existingClaim: "harbor-pvc"
           subPath: "trivy"
+          storageClass: "truenas-csi"
     caSecretName: ""
   valuesFrom:
     - kind: Secret
