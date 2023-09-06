@@ -17,6 +17,9 @@ spec:
         name: gitea
         namespace: flux-system
       interval: 5m
+  dependsOn:
+    - name: kube-system
+      namespace: csi-driver-nfs
   # All values at https://gitea.com/gitea/helm-chart
   values:
     global:

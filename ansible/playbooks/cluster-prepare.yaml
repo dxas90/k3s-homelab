@@ -126,6 +126,14 @@
     - name: System Configuration
       notify: Reboot
       block:
+        - name: GRUB_CMDLINE_LINUX_DEFAULT entry for /etc/default/grub.d/50-cloudimg-settings.cfg
+          ansible.builtin.lineinfile:
+            dest: /etc/default/grub.d/50-cloudimg-settings.cfg
+            regexp: '^GRUB_CMDLINE_LINUX_DEFAULT='
+            line: 'GRUB_CMDLINE_LINUX_DEFAULT="cgroup_enable=memory iommu=pt intel_iommu=on systemd.unified_cgroup_hierarchy=1 console=tty1 console=ttyS0"'
+            state: present
+        - name: Update grub # noqa: no-changed-when
+          ansible.builtin.command: "update-grub2"
         - name: System Configuration | Neofetch
           ansible.builtin.copy:
             dest: /etc/profile.d/neofetch.sh
@@ -165,7 +173,9 @@
               fs.inotify.max_queued_events: 65536
               fs.inotify.max_user_watches: 524288
               fs.inotify.max_user_instances: 8192
+# systemctl restart containerd
 
+# systemctl restart kubelet
   handlers:
     - name: Reboot
       ansible.builtin.reboot:

@@ -6,7 +6,7 @@ k3s_control_node: false
 k3s_agent:
   node-ip: "{{ ansible_host }}"
   kubelet-arg:
-    - eviction-minimum-reclaim=imagefs.available=1%,nodefs.available=1%
-    - eviction-hard=imagefs.available<1%,nodefs.available<1%
+    - eviction-minimum-reclaim=imagefs.available=10%,nodefs.available=10%
+    - eviction-hard=imagefs.available<10%,nodefs.available<10%
   node-label:
     - "proxmox.k3s.cluster=true"

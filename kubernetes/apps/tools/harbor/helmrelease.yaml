@@ -16,6 +16,9 @@ spec:
         name: harbor
         namespace: flux-system
       interval: 5m
+  dependsOn:
+    - name: kube-system
+      namespace: csi-driver-nfs
   values:
     expose:
       type: ingress
