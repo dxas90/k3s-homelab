@@ -4,3 +4,4 @@ resources:
   - secret.sops.yaml
   - gitea-volumes.yaml
   - helmrelease.yaml
+  - gatus.yaml

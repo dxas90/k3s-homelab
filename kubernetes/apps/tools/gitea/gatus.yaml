@@ -1,0 +1,34 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gitea-ep
+  namespace: tools
+  labels:
+    gatus.io/enabled: "true"
+data:
+  config.yaml: |
+    endpoints:
+      - name: gitea
+        group: external
+        url: https://gitea.${SECRET_DOMAIN}
+        ui:
+          hide-hostname: true
+          hide-url: true
+        interval: 1m
+        client:
+          dns-resolver: tcp://1.1.1.1:53
+        conditions:
+          - "[STATUS] == 200"
+      - name: gitea
+        group: guarded
+        url: 1.1.1.1
+        interval: 1m
+        ui:
+          hide-hostname: true
+          hide-url: true
+        dns:
+          query-name: gitea.${SECRET_DOMAIN}
+          query-type: A
+        conditions:
+          - "len([BODY]) == 0"

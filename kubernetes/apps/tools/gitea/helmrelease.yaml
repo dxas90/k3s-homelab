@@ -17,9 +17,6 @@ spec:
         name: gitea
         namespace: flux-system
       interval: 5m
-  dependsOn:
-    - name: kube-system
-      namespace: csi-driver-nfs
   # All values at https://gitea.com/gitea/helm-chart
   values:
     global:
@@ -137,7 +134,7 @@ spec:
           SECRET_KEY: ${GITEA_SECURITY_SECRET_KEY}
 
   valuesFrom:
-  - kind: Secret
-    name: "gitea-helm-values"
-    valuesKey: gitea.yaml
-    optional: false
+    - kind: Secret
+      name: "gitea-helm-values"
+      valuesKey: gitea.yaml
+      optional: false

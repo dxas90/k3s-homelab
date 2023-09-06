@@ -1,0 +1,33 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: services-home-ep
+  namespace: networking
+  labels:
+    gatus.io/enabled: "true"
+data:
+  config.yaml: |
+    endpoints:
+      - name: gitlab
+        group: external
+        url: https://home.dxas90.xyz
+        ui:
+          hide-hostname: true
+          hide-url: true
+        interval: 1m
+        client:
+          dns-resolver: tcp://1.1.1.1:53
+        conditions:
+          - "[STATUS] == 200"
+      - name: home
+        group: external
+        url: https://home.dxas90.xyz
+        ui:
+          hide-hostname: true
+          hide-url: true
+        interval: 1m
+        client:
+          dns-resolver: tcp://1.1.1.1:53
+        conditions:
+          - "[STATUS] == 200"
