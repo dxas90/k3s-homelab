@@ -26,11 +26,15 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
-  values:
+  values: # https://github.com/rook/rook/blob/release-1.12/deploy/charts/rook-ceph/values.yaml
     csi:
+      enableCSIHostNetwork: false
       csiAddons:
         enabled: true
       # Set when encryption/compression is enabled
-      # cephFSKernelMountOptions: ms_mode=secure
+      cephFSKernelMountOptions: ms_mode=secure
+      nfs:
+        # -- Enable the nfs csi driver
+        enabled: true
     monitoring:
       enabled: true

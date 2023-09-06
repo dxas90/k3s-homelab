@@ -26,7 +26,7 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
-  values:
+  values: # https://github.com/rook/rook/blob/release-1.12/deploy/charts/rook-ceph-cluster/values.yaml
     monitoring:
       enabled: true
       createPrometheusRules: true
@@ -68,73 +68,21 @@ spec:
           - name: k3s-pve-controller-0
             devices:
               - name: /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
-            resources:
-              limits:
-                cpu: "2"
-                memory: "2048Mi"
-              requests:
-                cpu: "2"
-                memory: "2048Mi"
           - name: k3s-pve-controller-1
             devices:
               - name: /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
-            resources:
-              limits:
-                cpu: "2"
-                memory: "2048Mi"
-              requests:
-                cpu: "2"
-                memory: "2048Mi"
           - name: k3s-pve-controller-2
             devices:
               - name: /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
-            resources:
-              limits:
-                cpu: "2"
-                memory: "2048Mi"
-              requests:
-                cpu: "2"
-                memory: "2048Mi"
           - name: k3s-pve-worker-0
             devices:
               - name: /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
-            resources:
-              limits:
-                cpu: "2"
-                memory: "4096Mi"
-              requests:
-                cpu: "2"
-                memory: "4096Mi"
           - name: k3s-pve-worker-1
             devices:
               - name: /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
-            resources:
-              limits:
-                cpu: "2"
-                memory: "4096Mi"
-              requests:
-                cpu: "2"
-                memory: "4096Mi"
           - name: k3s-pve-worker-2
             devices:
               - name: /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
-            resources:
-              limits:
-                cpu: "2"
-                memory: "4096Mi"
-              requests:
-                cpu: "2"
-                memory: "4096Mi"
-          - name: k3s-pve-worker-3
-            devices:
-              - name: /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
-            resources:
-              limits:
-                cpu: "2"
-                memory: "4096Mi"
-              requests:
-                cpu: "2"
-                memory: "4096Mi"
     cephBlockPools:
       - name: ceph-blockpool
         spec:
@@ -171,12 +119,12 @@ spec:
           metadataServer:
             activeCount: 1
             activeStandby: true
-            # resources:
-            #   requests:
-            #     cpu: 1000m
-            #     memory: 4Gi
-            #   limits:
-            #     memory: 4Gi
+            resources:
+              requests:
+                cpu: 1000m
+                memory: 4Gi
+              limits:
+                memory: 4Gi
         storageClass:
           enabled: true
           isDefault: false
@@ -207,12 +155,13 @@ spec:
           preservePoolsOnDelete: true
           gateway:
             port: 80
-            # resources:
-            #   requests:
-            #     cpu: 1000m
-            #     memory: 1Gi
-            #   limits:
-            #     memory: 2Gi
+            resources:
+              requests:
+                cpu: 1000m
+                memory: 1Gi
+              limits:
+                cpu: 2000m
+                memory: 2Gi
             instances: 2
           healthCheck:
             bucket:
