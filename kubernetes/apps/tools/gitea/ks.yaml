@@ -13,6 +13,8 @@ spec:
   dependsOn:
     - name: cluster-apps-nginx-external
       namespace: flux-system
+    - name: cluster-apps-csi-driver-nfs
+      namespace: flux-system
   wait: true
   interval: 30m
   retryInterval: 2m
