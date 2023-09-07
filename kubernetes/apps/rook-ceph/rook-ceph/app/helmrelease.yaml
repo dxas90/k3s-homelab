@@ -10,6 +10,7 @@ spec:
   timeout: 15m
   chart:
     spec:
+      # renovate: registryUrl=https://charts.rook.io/release
       chart: rook-ceph
       version: v1.12.3
       sourceRef:
@@ -29,6 +30,8 @@ spec:
   values: # https://github.com/rook/rook/blob/release-1.12/deploy/charts/rook-ceph/values.yaml
     csi:
       enableCSIHostNetwork: false
+      enableCephfsDriver: false
+      enableCephfsSnapshotter: false
       csiAddons:
         enabled: true
       # Set when encryption/compression is enabled
@@ -36,5 +39,17 @@ spec:
       nfs:
         # -- Enable the nfs csi driver
         enabled: true
+      pluginTolerations:
+        - key: "arm"
+          operator: "Exists"
+        - key: "node-role.kubernetes.io/master"
+          operator: "Exists"
     monitoring:
       enabled: true
+    resources:
+      limits:
+        cpu: 1000m
+        memory: 256Mi
+      requests:
+        cpu: 100m
+        memory: 128Mi

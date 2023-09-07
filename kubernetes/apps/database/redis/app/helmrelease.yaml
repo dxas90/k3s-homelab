@@ -10,6 +10,7 @@ spec:
   timeout: 15m
   chart:
     spec:
+      # renovate: registryUrl=oci://registry-1.docker.io/bitnamicharts
       chart: redis
       version: 17.15.4
       sourceRef:

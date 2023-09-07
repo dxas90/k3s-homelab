@@ -9,6 +9,7 @@ spec:
   timeout: 15m
   chart:
     spec:
+      # renovate: registryUrl=oci://ghcr.io/prometheus-community/charts
       chart: kube-prometheus-stack
       version: 48.1.2
       sourceRef:

@@ -9,6 +9,7 @@ spec:
   targetNamespace: tools
   chart:
     spec:
+      # renovate: registryUrl=https://helm.goharbor.io
       chart: harbor
       version: 1.12.3
       sourceRef:

@@ -8,6 +8,7 @@ spec:
   interval: 30m
   chart:
     spec:
+      # renovate: registryUrl=https://charts.jetstack.io/
       chart: traefik
       version: 24.0.0
       sourceRef:

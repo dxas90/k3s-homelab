@@ -8,6 +8,7 @@ spec:
   interval: 30m
   chart:
     spec:
+      # renovate: registryUrl=https://charts.external-secrets.io
       chart: external-secrets
       version: v0.9.1
       sourceRef:
