@@ -10,3 +10,4 @@ k3s_agent:
     - eviction-hard=imagefs.available<10%,nodefs.available<10%
   node-label:
     - "proxmox.k3s.cluster=true"
+  # k3s_registration_address: "{{ kube_vip_addr }}"

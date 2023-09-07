@@ -73,6 +73,8 @@
             - "/usr/lib/snapd"
             - "/snap"
           retries: "{{ retry_count | default(3) }}"
+          register: snapd_folders_removed
+          until: snapd_folders_removed is success
           delay: 3
       when:
         - "'snapd' in ansible_facts.packages"
@@ -173,9 +175,7 @@
               fs.inotify.max_queued_events: 65536
               fs.inotify.max_user_watches: 524288
               fs.inotify.max_user_instances: 8192
-# systemctl restart containerd
 
-# systemctl restart kubelet
   handlers:
     - name: Reboot
       ansible.builtin.reboot:
