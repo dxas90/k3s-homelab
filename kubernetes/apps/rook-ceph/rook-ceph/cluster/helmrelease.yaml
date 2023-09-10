@@ -65,19 +65,7 @@ spec:
         config:
           osdsPerDevice: "1"
         nodes:
-          - name: k3s-pve-controller-0
-            devices:
-              - name: /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
-          - name: k3s-pve-controller-1
-            devices:
-              - name: /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
-          - name: k3s-pve-controller-2
-            devices:
-              - name: /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
           - name: k3s-pve-worker-0
-            devices:
-              - name: /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
-          - name: k3s-pve-worker-1
             devices:
               - name: /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
           - name: k3s-pve-worker-2
@@ -88,7 +76,7 @@ spec:
         spec:
           failureDomain: host
           replicated:
-            size: 6
+            size: 2
         storageClass:
           enabled: true
           name: ceph-block
@@ -110,11 +98,11 @@ spec:
         spec:
           metadataPool:
             replicated:
-              size: 6
+              size: 2
           dataPools:
             - failureDomain: host
               replicated:
-                size: 6
+                size: 2
               name: data0
           metadataServer:
             activeCount: 1
@@ -146,7 +134,7 @@ spec:
           metadataPool:
             failureDomain: host
             replicated:
-              size: 6
+              size: 2
           dataPool:
             failureDomain: host
             erasureCoded:

@@ -11,9 +11,13 @@ kubernetes:
         k3s-pve-worker-0:
           ansible_user: ubuntu
           ansible_host: 10.4.0.30
+          ceph_drives:
+            - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
         k3s-pve-worker-1:
           ansible_user: ubuntu
           ansible_host: 10.4.0.31
         k3s-pve-worker-2:
           ansible_user: ubuntu
           ansible_host: 10.4.0.32
+          ceph_drives:
+            - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
