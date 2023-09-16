@@ -10,6 +10,8 @@ spec:
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
+  dependsOn:
+    - name: cluster-apps-cloudflared
   wait: false # no flux ks dependents
   interval: 30m
   retryInterval: 1m
