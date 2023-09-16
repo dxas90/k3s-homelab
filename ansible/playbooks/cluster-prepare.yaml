@@ -29,9 +29,9 @@
         - name: Packages | Install
           ansible.builtin.apt:
             name: apt-transport-https,ca-certificates,conntrack,curl,dirmngr,gdisk,gnupg,hdparm,htop,
-              iptables,iputils-ping,ipvsadm,libseccomp2,lm-sensors,lvm2,neofetch,net-tools,nfs-common,
+              iperf3,iptables,iputils-ping,ipvsadm,libseccomp2,lm-sensors,lvm2,neofetch,net-tools,nfs-common,
               nvme-cli,open-iscsi,parted,psmisc,python3,python3-apt,python3-kubernetes,python3-yaml,
-              qemu-guest-agent, smartmontools,socat,software-properties-common,unzip,util-linux
+              qemu-guest-agent,smartmontools,socat,software-properties-common,unzip,util-linux
             install_recommends: false
             update_cache: yes
 
@@ -134,6 +134,7 @@
             regexp: '^GRUB_CMDLINE_LINUX_DEFAULT='
             line: 'GRUB_CMDLINE_LINUX_DEFAULT="cgroup_enable=memory iommu=pt intel_iommu=on systemd.unified_cgroup_hierarchy=1 console=tty1 console=ttyS0"'
             state: present
+            create: true
         - name: Update grub # noqa: no-changed-when
           ansible.builtin.command: "update-grub2"
         - name: System Configuration | Neofetch
