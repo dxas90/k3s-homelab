@@ -30,3 +30,4 @@ k3s_server:
   kube-apiserver-arg:
     - "anonymous-auth=true"           # Required for HAProxy health-checks
   # datastore-endpoint: "{{ postgresql_endpoint }}"  # from extras.sops.yaml
+  tls-san-security: true
