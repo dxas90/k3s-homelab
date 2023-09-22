@@ -18,3 +18,23 @@ mountOptions:
   - hard
   - noatime
   - nfsvers=4.1
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs-ceph-csi
+  labels:
+    substitution.flux.home.arpa/disabled: "true"
+    kustomize.toolkit.fluxcd.io/substitute: disabled
+provisioner: nfs.csi.k8s.io
+parameters:
+  server: 10.4.5.31
+  share: /nfs/k8s
+  subDir: ${pvc.metadata.namespace}/${pvc.metadata.name}
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+allowVolumeExpansion: true
+mountOptions:
+  - hard
+  - noatime
+  - nfsvers=4.2
