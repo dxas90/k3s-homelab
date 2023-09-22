@@ -16,11 +16,11 @@ ingress:
   - hostname: "dxas90.xyz"
     service: https://nginx-external-controller.networking.svc.cluster.local:443
     originRequest:
-      originServerName: "external.${SECRET_DOMAIN}"
+      originServerName: "external.dxas90.xyz"
   - hostname: "*.dxas90.xyz"
     service: https://nginx-external-controller.networking.svc.cluster.local:443
     originRequest:
-      originServerName: "external.${SECRET_DOMAIN}"
+      originServerName: "external.dxas90.xyz"
   - service: http_status:404
 
 # https://developers.cloudflare.com/support/network/understanding-cloudflare-grpc-support/#requirements

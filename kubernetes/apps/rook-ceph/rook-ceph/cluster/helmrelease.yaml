@@ -27,6 +27,34 @@ spec:
   uninstall:
     keepHistory: false
   values: # https://github.com/rook/rook/blob/release-1.12/deploy/charts/rook-ceph-cluster/values.yaml
+    ingress:
+      dashboard:
+        ingressClassName: internal
+        host:
+          name: &host rook.${SECRET_DOMAIN}
+          path: /
+        tls:
+          - hosts:
+              - *host
+    cephClusterSpec:
+      external:
+        enable: true
+      crashCollector:
+        disable: true
+      healthCheck:
+        daemonHealth:
+          mon:
+            disabled: false
+            interval: 45s
+      monitoring:
+        enabled: true
+        externalMgrEndpoints:
+        - ip: 10.4.5.30
+          externalMgrPrometheusPort: 9283
+    cephBlockPools: {}
+    cephFileSystems: {}
+    cephObjectStores: {}
+  original_values:
     monitoring:
       enabled: true
       createPrometheusRules: true
