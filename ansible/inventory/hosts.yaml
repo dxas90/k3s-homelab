@@ -3,17 +3,17 @@ kubernetes:
   children:
     master:
       hosts:
-        clio-k3s-ctl:
-          ansible_user: ubuntu
-          ansible_host: 10.4.5.40
-    worker:
-      hosts:
-        calliope-k3s-wk:
+        calliope-k3s:
           ansible_user: ubuntu
           ansible_host: 10.4.5.30
-        thalia-k3s-wk:
+    worker:
+      hosts:
+        clio-k3s:
+          ansible_user: ubuntu
+          ansible_host: 10.4.5.40
+        thalia-k3s:
           ansible_user: ubuntu
           ansible_host: 10.4.5.31
-        melpomene-k3s-wk:
+        melpomene-k3s:
           ansible_user: ubuntu
           ansible_host: 10.4.5.32
