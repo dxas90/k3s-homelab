@@ -28,7 +28,7 @@ metadata:
     kustomize.toolkit.fluxcd.io/substitute: disabled
 provisioner: nfs.csi.k8s.io
 parameters:
-  server: 10.4.5.31
+  server: 10.4.5.233
   share: /nfs/k8s
   subDir: ${pvc.metadata.namespace}/${pvc.metadata.name}
 reclaimPolicy: Delete
