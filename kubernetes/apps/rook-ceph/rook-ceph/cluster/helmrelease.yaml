@@ -49,7 +49,7 @@ spec:
       monitoring:
         enabled: true
         externalMgrEndpoints:
-        - ip: 10.4.5.30
+        - ip: 10.4.5.230
           externalMgrPrometheusPort: 9283
     cephBlockPools: {}
     cephFileSystems: {}
