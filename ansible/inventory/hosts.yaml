@@ -6,14 +6,14 @@ kubernetes:
         calliope-k3s:
           ansible_user: ubuntu
           ansible_host: 10.4.5.30
-    worker:
-      hosts:
-        clio-k3s:
-          ansible_user: ubuntu
-          ansible_host: 10.4.5.40
-        thalia-k3s:
-          ansible_user: ubuntu
-          ansible_host: 10.4.5.31
-        melpomene-k3s:
-          ansible_user: ubuntu
-          ansible_host: 10.4.5.32
+    # worker:
+    #   hosts:
+    #     clio-k3s:
+    #       ansible_user: ubuntu
+    #       ansible_host: 10.4.5.40
+    #     thalia-k3s:
+    #       ansible_user: ubuntu
+    #       ansible_host: 10.4.5.31
+    #     melpomene-k3s:
+    #       ansible_user: ubuntu
+    #       ansible_host: 10.4.5.32

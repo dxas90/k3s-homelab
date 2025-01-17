@@ -8,7 +8,7 @@ spec:
   interval: 30m
   ref:
     branch: main
-  url: "https://github.com/dramirez-qb/k3s-homelab.git"
+  url: "https://github.com/dxas90/k3s-homelab.git"
   ignore: |
     # exclude all
     /*
