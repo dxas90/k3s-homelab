@@ -43,7 +43,7 @@ spec:
         reloader.stakater.com/auto: "true"
     image:
       repository: ghcr.io/twin/gatus
-      tag: v5.23.1
+      tag: v5.23.2
     env:
       TZ: ${TIMEZONE}
       GATUS_CONFIG_PATH: /config
